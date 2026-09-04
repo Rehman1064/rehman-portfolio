@@ -132,7 +132,8 @@ export const portfolio: PortfolioData = {
     name: 'Rehman Ali',
     title: 'Software Engineer',
     roles: ['Software Engineer', 'Data Engineer', 'Python Developer'],
-    tagline: 'I build backend systems and data pipelines that turn rough ideas into working software.',
+    tagline:
+      'I design and develop web applications, scalable backend systems, and data pipelines that turn rough ideas into working software.',
     avatar: '/avatar.png',
     primaryCta: { label: 'View Projects', href: '#projects' },
     secondaryCta: { label: 'Get In Touch', href: '#contact' },
