@@ -110,7 +110,7 @@ export const portfolio: PortfolioData = {
   meta: {
     siteTitle: 'Rehman Ali — Software Engineer',
     siteDescription:
-      'Portfolio of Rehman Ali, an Associate Software Engineer working across Python, React, and Flask — from web-scraping pipelines to full-stack apps.',
+      'Portfolio of Rehman Ali, an Associate Software Engineer working across Python, React, and Flask, building web-scraping pipelines and full-stack apps.',
   },
 
   nav: [
@@ -142,7 +142,7 @@ export const portfolio: PortfolioData = {
     heading: 'About Me',
     paragraphs: [
       "I'm a Software Engineer with hands-on experience in Python and Data Engineering. I build modern data pipelines for web scraping, ETL, and large-scale data processing.",
-      'I work with Python, Scrapy, SQL, MySQL, Django, Flask, and PySpark — handling large datasets, automating data workflows, and optimizing pipeline performance.',
+      'I work with Python, Scrapy, SQL, MySQL, Django, Flask, and PySpark, handling large datasets, automating data workflows, and optimizing pipeline performance.',
       'I also have experience building REST APIs and integrating data with backend systems. I enjoy solving data problems and building reliable, scalable data solutions.',
     ],
     stats: [

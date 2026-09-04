@@ -14,6 +14,7 @@ interface PipelineGraphProps {
   nodes: PipelineNode[]
   edges: Edge[]
   ariaLabel: string
+  viewBoxWidth?: number
 }
 
 const dataPipelineNodes: PipelineNode[] = [
@@ -36,17 +37,20 @@ const dataPipelineEdges: Edge[] = [
 
 const webDevNodes: PipelineNode[] = [
   { id: 'react-client', label: 'react', x: 40, y: 150 },
-  { id: 'django', label: 'django', x: 190, y: 70 },
-  { id: 'flask', label: 'flask', x: 190, y: 230 },
-  { id: 'database', label: 'database', x: 400, y: 150 },
-  { id: 'response', label: 'response', x: 610, y: 70 },
-  { id: 'react-ui', label: 'react ui', x: 610, y: 230 },
+  { id: 'django', label: 'django', x: 260, y: 60 },
+  { id: 'node', label: 'Node', x: 260, y: 150 },
+  { id: 'flask', label: 'flask', x: 260, y: 240 },
+  { id: 'database', label: 'database', x: 470, y: 150 },
+  { id: 'response', label: 'dashboard', x: 640, y: 70 },
+  { id: 'react-ui', label: 'UI/UX', x: 640, y: 230 },
 ]
 
 const webDevEdges: Edge[] = [
   ['react-client', 'django'],
+  ['react-client', 'node'],
   ['react-client', 'flask'],
   ['django', 'database'],
+  ['node', 'database'],
   ['flask', 'database'],
   ['database', 'response'],
   ['database', 'react-ui'],
@@ -57,7 +61,7 @@ function findNode(nodes: PipelineNode[], id: string) {
 }
 
 /** Animated node-graph motif built from an arbitrary set of nodes/edges. Purely decorative. */
-function PipelineGraph({ nodes, edges, ariaLabel }: PipelineGraphProps) {
+function PipelineGraph({ nodes, edges, ariaLabel, viewBoxWidth = 650 }: PipelineGraphProps) {
   const prefersReducedMotion = useReducedMotion()
   const uid = useId()
   const edgeGradientId = `edge-gradient-${uid}`
@@ -65,13 +69,20 @@ function PipelineGraph({ nodes, edges, ariaLabel }: PipelineGraphProps) {
 
   return (
     <svg
-      viewBox="0 0 650 300"
+      viewBox={`0 0 ${viewBoxWidth} 300`}
       className="h-auto w-full max-w-xl"
       role="img"
       aria-label={ariaLabel}
     >
       <defs>
-        <linearGradient id={edgeGradientId} x1="0" y1="0" x2="1" y2="0">
+        <linearGradient
+          id={edgeGradientId}
+          gradientUnits="userSpaceOnUse"
+          x1="0"
+          y1="0"
+          x2={viewBoxWidth}
+          y2="0"
+        >
           <stop offset="0%" stopColor="var(--color-accent)" stopOpacity="0.15" />
           <stop offset="100%" stopColor="var(--color-accent-3)" stopOpacity="0.75" />
         </linearGradient>
@@ -149,7 +160,8 @@ export function WebDevNodeGraph() {
     <PipelineGraph
       nodes={webDevNodes}
       edges={webDevEdges}
-      ariaLabel="Animated diagram of a web development flow: a React frontend calling Django or Flask REST APIs, backed by a database, returning a response that React renders in the UI."
+      viewBoxWidth={690}
+      ariaLabel="Animated diagram of a web development flow: a React frontend calling Django, Node, or Flask APIs, all backed by a database, feeding a dashboard and UI/UX layer."
     />
   )
 }

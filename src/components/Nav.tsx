@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { Menu, Terminal, X } from 'lucide-react'
+import { Home, Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import { Container } from '@/components/ui/Container'
 import { portfolio } from '@/data/portfolio'
@@ -20,7 +20,7 @@ export function Nav() {
           aria-label="Scroll to top"
           className="focus-ring flex items-center gap-2 font-mono text-sm font-semibold text-text"
         >
-          <Terminal className="h-4 w-4 text-accent-2" aria-hidden="true" />
+          <Home className="h-4 w-4 text-accent-2" aria-hidden="true" />
         </a>
 
         <nav aria-label="Primary" className="hidden items-center gap-1 md:flex">
