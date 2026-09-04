@@ -160,8 +160,8 @@ export const portfolio: PortfolioData = {
     },
     {
       id: 'languages',
-      label: 'Languages & DSA',
-      skills: ['Python', 'JavaScript', 'React', 'Node', 'C', 'C++', 'Java', 'Data Structures & Algorithms'],
+      label: 'Languages',
+      skills: ['Python', 'JavaScript', 'React', 'Node', 'C', 'C++', 'Java'],
     },
     {
       id: 'web',
@@ -216,7 +216,7 @@ export const portfolio: PortfolioData = {
     },
     {
       role: 'Teacher Assistant (DSA)',
-      company: 'Punjab University College of Information Technology (PUCIT)',
+      company: 'PUCIT',
       location: 'Lahore, Pakistan',
       start: 'Oct 2022',
       end: 'Apr 2023',
@@ -239,14 +239,7 @@ export const portfolio: PortfolioData = {
     },
   ],
 
-  certificates: [
-    {
-      title: 'Data Structures and Algorithms',
-      issuer: 'Coursera',
-      description:
-        'This course enhanced my understanding of various data structures and strengthened my problem-solving skills.',
-    },
-  ],
+  certificates: [],
 
   projects: [
     {
