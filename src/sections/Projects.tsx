@@ -32,7 +32,7 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
             <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
               <h3 className="text-lg font-bold text-text">{project.title}</h3>
               {project.featured && (
-                <span className="rounded-full bg-gradient-to-r from-accent to-accent-3 px-2.5 py-1 font-mono text-[11px] font-semibold text-bg">
+                <span className="rounded-full bg-gradient-to-r from-accent to-accent-3 px-2.5 py-1 text-[11px] font-semibold text-white">
                   Featured
                 </span>
               )}
@@ -53,7 +53,7 @@ function ProjectCard({ project, delay }: { project: Project; delay: number }) {
                     href={link.href}
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="focus-ring inline-flex items-center gap-1.5 font-mono text-sm text-accent-2 hover:text-accent"
+                    className="focus-ring inline-flex items-center gap-1.5 text-sm font-semibold text-accent hover:text-accent-3"
                   >
                     {link.label}
                     <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
@@ -88,9 +88,9 @@ export function Projects() {
             onClick={() => setActiveTag(null)}
             aria-pressed={activeTag === null}
             className={cn(
-              'focus-ring rounded-full border px-3.5 py-1.5 font-mono text-xs transition-colors',
+              'focus-ring rounded-full border px-3.5 py-1.5 text-xs font-medium transition-colors',
               activeTag === null
-                ? 'border-accent-3/50 bg-surface text-text'
+                ? 'border-accent/40 bg-surface text-text shadow-[0_1px_2px_rgba(0,0,0,0.3)]'
                 : 'border-border text-text-muted hover:border-border-hover hover:text-text',
             )}
           >
@@ -103,9 +103,9 @@ export function Projects() {
               onClick={() => setActiveTag(tag)}
               aria-pressed={activeTag === tag}
               className={cn(
-                'focus-ring rounded-full border px-3.5 py-1.5 font-mono text-xs transition-colors',
+                'focus-ring rounded-full border px-3.5 py-1.5 text-xs font-medium transition-colors',
                 activeTag === tag
-                  ? 'border-accent-3/50 bg-surface text-text'
+                  ? 'border-accent/40 bg-surface text-text shadow-[0_1px_2px_rgba(0,0,0,0.3)]'
                   : 'border-border text-text-muted hover:border-border-hover hover:text-text',
               )}
             >
@@ -121,7 +121,7 @@ export function Projects() {
         </div>
 
         {filtered.length === 0 && (
-          <p className="py-12 text-center font-mono text-sm text-text-faint">
+          <p className="py-12 text-center text-sm text-text-faint">
             No projects tagged "{activeTag}" yet.
           </p>
         )}

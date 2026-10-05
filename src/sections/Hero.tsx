@@ -56,19 +56,16 @@ export function Hero() {
               height={80}
               className="relative h-20 w-20 rounded-2xl border border-border object-cover"
             />
-            <span className="absolute -bottom-1.5 -right-1.5 flex h-5 w-5 items-center justify-center rounded-full border-2 border-bg bg-accent-3">
+            <span className="absolute -bottom-1.5 -right-1.5 flex h-5 w-5 items-center justify-center rounded-full border-2 border-bg bg-accent-2">
               <span className="sr-only">Available for work</span>
             </span>
           </div>
 
-          <h1 className="text-gradient animate-gradient-x bg-[length:200%_auto] text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+          <h1 className="text-gradient text-4xl font-extrabold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
             {hero.name}
           </h1>
-          <p className="mt-3 font-mono text-lg text-text sm:text-xl" aria-live="off">
+          <p className="mt-3 text-lg font-medium text-accent sm:text-xl" aria-live="off">
             {displayedTitle}
-            <span className="animate-blink text-accent-2" aria-hidden="true">
-              _
-            </span>
             <span className="sr-only">{hero.title}</span>
           </p>
           <p className="mt-6 max-w-lg text-lg text-text-muted">{hero.tagline}</p>

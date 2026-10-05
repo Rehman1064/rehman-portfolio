@@ -1,39 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap');
 @import 'tailwindcss';
 
 @theme {
   --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 
-  --color-bg: #05070d;
-  --color-bg-elevated: #0a0e1a;
-  --color-surface: #101529;
-  --color-border: #212a45;
-  --color-border-hover: #35406b;
-  --color-text: #eef1fb;
-  --color-text-muted: #98a1c4;
-  --color-text-faint: #565f82;
+  --color-bg: #0b0e14;
+  --color-bg-elevated: #11151f;
+  --color-surface: #161b26;
+  --color-border: #262c3a;
+  --color-border-hover: #3a4257;
+  --color-text: #eef1f8;
+  --color-text-muted: #9aa1b8;
+  --color-text-faint: #666f8a;
 
-  /* primary interactive accent (electric indigo) */
-  --color-accent: #5b7cfa;
-  --color-accent-soft: #5b7cfa2e;
-  /* secondary accent (warm amber, used sparingly for highlights) */
-  --color-accent-2: #f5a524;
-  --color-accent-2-soft: #f5a5242e;
-  /* tertiary accent (emerald — gradient partner for accent) */
-  --color-accent-3: #2dd4a7;
-  --color-accent-3-soft: #2dd4a72e;
-  /* quaternary accent (rose, occasional flair) */
-  --color-accent-4: #fb6f9c;
-  --color-accent-4-soft: #fb6f9c2e;
+  /* primary brand accent (corporate blue) */
+  --color-accent: #3b82f6;
+  --color-accent-soft: #3b82f629;
+  /* status accent (available/success green), used sparingly and semantically */
+  --color-accent-2: #22c55e;
+  --color-accent-2-soft: #22c55e29;
+  /* tertiary accent (indigo — gradient partner for accent) */
+  --color-accent-3: #6366f1;
+  --color-accent-3-soft: #6366f129;
+  /* quaternary accent (neutral slate, rare use) */
+  --color-accent-4: #64748b;
+  --color-accent-4-soft: #64748b29;
 
   --animate-flow: flow 3.6s linear infinite;
   --animate-pulse-slow: pulse-slow 3s ease-in-out infinite;
-  --animate-blink: blink 1.1s step-end infinite;
-  --animate-drift-a: drift-a 22s ease-in-out infinite;
-  --animate-drift-b: drift-b 26s ease-in-out infinite;
-  --animate-drift-c: drift-c 30s ease-in-out infinite;
-  --animate-gradient-x: gradient-x 6s ease infinite;
 
   @keyframes flow {
     to {
@@ -49,53 +44,6 @@
     50% {
       opacity: 1;
       transform: scale(1.12);
-    }
-  }
-  @keyframes blink {
-    50% {
-      opacity: 0;
-    }
-  }
-  @keyframes drift-a {
-    0%,
-    100% {
-      transform: translate(0, 0) scale(1);
-    }
-    33% {
-      transform: translate(6%, 8%) scale(1.08);
-    }
-    66% {
-      transform: translate(-4%, 4%) scale(0.96);
-    }
-  }
-  @keyframes drift-b {
-    0%,
-    100% {
-      transform: translate(0, 0) scale(1);
-    }
-    50% {
-      transform: translate(-8%, -6%) scale(1.1);
-    }
-  }
-  @keyframes drift-c {
-    0%,
-    100% {
-      transform: translate(0, 0) scale(1);
-    }
-    40% {
-      transform: translate(5%, -8%) scale(1.05);
-    }
-    70% {
-      transform: translate(-6%, 3%) scale(0.94);
-    }
-  }
-  @keyframes gradient-x {
-    0%,
-    100% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
     }
   }
 }
@@ -126,7 +74,7 @@ body {
   color: #06060f;
 }
 
-/* subtle engineering grid backdrop */
+/* faint structural grid, used sparingly behind hero/CTA panels */
 .bg-grid {
   background-image:
     linear-gradient(to right, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
@@ -138,14 +86,8 @@ body {
   mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 40%, transparent 100%);
 }
 
-/* faint film-grain texture for depth, layered over the aurora blobs */
-.bg-noise {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
-}
-
 .text-gradient {
   background-image: linear-gradient(90deg, var(--color-accent), var(--color-accent-3));
-  background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -153,7 +95,7 @@ body {
 
 /* infinite horizontal marquee for the tech-stack strip */
 .animate-marquee {
-  animation: marquee 28s linear infinite;
+  animation: marquee 32s linear infinite;
 }
 @keyframes marquee {
   to {
@@ -164,10 +106,6 @@ body {
   .animate-marquee {
     animation: none;
   }
-}
-
-.text-glow {
-  text-shadow: 0 0 40px var(--color-accent-soft);
 }
 
 .focus-ring {

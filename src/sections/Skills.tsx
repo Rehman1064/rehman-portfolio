@@ -47,7 +47,7 @@ export function Skills() {
                       >
                         <Icon className="h-4 w-4" aria-hidden="true" />
                       </span>
-                      <h3 className="font-mono text-sm uppercase tracking-widest text-text">
+                      <h3 className="text-sm font-semibold uppercase tracking-widest text-text">
                         {group.label}
                       </h3>
                     </div>
@@ -55,7 +55,7 @@ export function Skills() {
                       {group.skills.map((skill) => (
                         <li
                           key={skill}
-                          className="rounded-md border border-border bg-bg-elevated px-3 py-1.5 font-mono text-sm text-text-muted transition-colors group-hover:text-text"
+                          className="rounded-md border border-border bg-bg-elevated px-3 py-1.5 text-sm font-medium text-text-muted transition-colors group-hover:text-text"
                         >
                           {skill}
                         </li>

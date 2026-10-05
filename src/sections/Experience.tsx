@@ -41,11 +41,11 @@ export function Experience() {
                   className={cn(
                     'focus-ring shrink-0 rounded-lg border px-4 py-3 text-left transition-colors',
                     activeIndex === i
-                      ? 'border-accent-3/50 bg-surface text-text'
+                      ? 'border-accent/40 bg-surface text-text shadow-[0_1px_2px_rgba(0,0,0,0.3)]'
                       : 'border-border text-text-muted hover:border-border-hover hover:text-text',
                   )}
                 >
-                  <span className="block font-mono text-xs text-text-faint">
+                  <span className="block text-xs font-medium text-text-faint">
                     {entry.start} — {entry.end}
                   </span>
                   <span className="mt-1 block text-sm font-semibold">{entry.company}</span>
@@ -72,8 +72,8 @@ export function Experience() {
                     className="p-6"
                   >
                     <h3 className="text-lg font-bold text-text">{active.role}</h3>
-                    <p className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-sm">
-                      <span className="flex items-center gap-1.5 text-accent-2">
+                    <p className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm">
+                      <span className="flex items-center gap-1.5 font-semibold text-accent">
                         <Briefcase className="h-3.5 w-3.5" aria-hidden="true" />
                         {active.company}
                       </span>

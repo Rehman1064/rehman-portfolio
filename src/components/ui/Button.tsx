@@ -6,7 +6,7 @@ interface ButtonProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   variant?: 'primary' | 'secondary'
 }
 
-const MAX_MAGNET_PX = 8
+const MAX_MAGNET_PX = 6
 
 export function Button({ variant = 'primary', className, children, ...props }: ButtonProps) {
   const ref = useRef<HTMLAnchorElement>(null)
@@ -30,11 +30,11 @@ export function Button({ variant = 'primary', className, children, ...props }: B
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className={cn(
-        'focus-ring inline-flex items-center gap-2 rounded-lg px-5 py-3 font-mono text-sm font-medium transition-[box-shadow,background-position] duration-200 [transition:transform_0.15s_ease-out,box-shadow_0.2s]',
+        'focus-ring inline-flex items-center gap-2 rounded-lg px-5 py-3 text-sm font-semibold transition-[box-shadow,background-color] duration-200 [transition:transform_0.15s_ease-out,box-shadow_0.2s,background-color_0.2s]',
         variant === 'primary' &&
-          'animate-gradient-x bg-[length:200%_auto] bg-gradient-to-r from-accent via-accent-3 to-accent text-bg shadow-[0_0_0_0_var(--color-accent-soft)] hover:shadow-[0_0_32px_6px_var(--color-accent-soft)]',
+          'bg-accent text-white shadow-[0_1px_2px_rgba(0,0,0,0.35)] hover:bg-accent-3 hover:shadow-[0_8px_24px_-6px_var(--color-accent-soft)]',
         variant === 'secondary' &&
-          'border border-border text-text hover:border-accent-3/60 hover:bg-surface',
+          'border border-border bg-surface text-text hover:border-border-hover hover:bg-bg-elevated',
         className,
       )}
       {...props}

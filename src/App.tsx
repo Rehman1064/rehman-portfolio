@@ -39,7 +39,7 @@ function App() {
     <>
       <a
         href="#main-content"
-        className="fixed left-4 top-4 z-[60] -translate-y-24 rounded-md bg-accent px-4 py-2 font-mono text-sm text-bg transition-transform focus-visible:translate-y-0"
+        className="fixed left-4 top-4 z-[60] -translate-y-24 rounded-md bg-accent px-4 py-2 text-sm font-semibold text-white transition-transform focus-visible:translate-y-0"
       >
         Skip to content
       </a>

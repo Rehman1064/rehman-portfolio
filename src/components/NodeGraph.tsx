@@ -133,7 +133,7 @@ function PipelineGraph({ nodes, edges, ariaLabel, viewBoxWidth = 650 }: Pipeline
           <text
             y={38}
             textAnchor="middle"
-            className="fill-text-muted font-mono text-[11px] uppercase tracking-wider"
+            className="fill-text-muted text-[11px] font-medium uppercase tracking-wider"
           >
             {node.label}
           </text>

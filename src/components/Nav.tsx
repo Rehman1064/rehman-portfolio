@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { Home, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import { Container } from '@/components/ui/Container'
 import { portfolio } from '@/data/portfolio'
@@ -13,14 +13,14 @@ export function Nav() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-border/80 bg-bg/80 backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-bg/85 backdrop-blur-md">
       <Container className="flex h-16 items-center justify-between">
         <a
           href="#top"
           aria-label="Scroll to top"
-          className="focus-ring flex items-center gap-2 font-mono text-sm font-semibold text-text"
+          className="focus-ring text-base font-bold tracking-tight text-text"
         >
-          <Home className="h-4 w-4 text-accent-2" aria-hidden="true" />
+          {portfolio.hero.name}
         </a>
 
         <nav aria-label="Primary" className="hidden items-center gap-1 md:flex">
@@ -33,14 +33,14 @@ export function Nav() {
                 href={link.href}
                 aria-current={isActive ? 'true' : undefined}
                 className={cn(
-                  'focus-ring relative rounded-md px-4 py-2 font-mono text-sm transition-colors',
+                  'focus-ring relative rounded-md px-4 py-2 text-sm font-medium transition-colors',
                   isActive ? 'text-text' : 'text-text-muted hover:text-text',
                 )}
               >
                 {link.label}
                 {isActive && (
                   <span
-                    className="absolute inset-x-3 -bottom-px h-px bg-gradient-to-r from-accent to-accent-3"
+                    className="absolute inset-x-3 -bottom-px h-0.5 rounded-full bg-accent"
                     aria-hidden="true"
                   />
                 )}
@@ -70,7 +70,7 @@ export function Nav() {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="overflow-hidden border-t border-border bg-bg-elevated md:hidden"
+            className="overflow-hidden border-t border-border bg-surface md:hidden"
           >
             <Container className="flex flex-col py-3">
               {portfolio.nav.map((link) => {
@@ -82,8 +82,8 @@ export function Nav() {
                     href={link.href}
                     onClick={() => setIsOpen(false)}
                     className={cn(
-                      'focus-ring rounded-md px-2 py-3 font-mono text-sm',
-                      isActive ? 'text-accent-2' : 'text-text-muted',
+                      'focus-ring rounded-md px-2 py-3 text-sm font-medium',
+                      isActive ? 'text-accent' : 'text-text-muted',
                     )}
                   >
                     {link.label}

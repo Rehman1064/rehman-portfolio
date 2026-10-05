@@ -2,7 +2,6 @@ import { Reveal } from '@/components/ui/Reveal'
 import { Container } from '@/components/ui/Container'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { SpotlightCard } from '@/components/ui/SpotlightCard'
-import { TerminalWindow } from '@/components/TerminalWindow'
 import { portfolio } from '@/data/portfolio'
 
 const statColors = ['text-accent', 'text-accent-2', 'text-accent-3']
@@ -18,18 +17,14 @@ export function About() {
 
         <div className="grid gap-5 lg:grid-cols-4 lg:grid-rows-2">
           <Reveal className="lg:col-span-2 lg:row-span-2">
-            <TerminalWindow className="h-full">
-              <p>
-                <span className="text-accent-2">$</span> whoami
-              </p>
-              <p className="text-text-muted">
-                {hero.name} — {hero.title}
-              </p>
-              <p className="pt-2 text-text-muted">
-                {about.paragraphs[0]}
-                <span className="animate-blink text-accent-2">_</span>
-              </p>
-            </TerminalWindow>
+            <SpotlightCard className="h-full border-accent/15 bg-gradient-to-br from-accent/5 to-transparent">
+              <div className="flex h-full flex-col p-7">
+                <span className="text-xs font-semibold uppercase tracking-widest text-accent">
+                  {hero.name} — {hero.title}
+                </span>
+                <p className="mt-4 text-lg leading-relaxed text-text">{about.paragraphs[0]}</p>
+              </div>
+            </SpotlightCard>
           </Reveal>
 
           <Reveal delay={0.08} className="lg:col-span-2">
@@ -50,7 +45,7 @@ export function About() {
             <Reveal key={stat.label} delay={0.24 + i * 0.06}>
               <SpotlightCard>
                 <p className="p-6">
-                  <span className="block font-mono text-xs uppercase tracking-widest text-text-faint">
+                  <span className="block text-xs font-semibold uppercase tracking-widest text-text-faint">
                     {stat.label}
                   </span>
                   <span

@@ -9,7 +9,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border py-10">
       <Container className="flex flex-col items-center justify-between gap-6 sm:flex-row">
-        <p className="font-mono text-xs text-text-faint">
+        <p className="text-xs text-text-faint">
           © {new Date().getFullYear()} {portfolio.hero.name}. All rights reserved.
         </p>
         <div className="flex items-center gap-4">

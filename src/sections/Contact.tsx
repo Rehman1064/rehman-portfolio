@@ -31,12 +31,12 @@ export function Contact() {
             aria-hidden="true"
           />
           <div
-            className="pointer-events-none absolute left-1/2 top-1/2 h-[280px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-accent/20 via-accent-2/20 to-accent-3/20 blur-[100px]"
+            className="pointer-events-none absolute left-1/2 top-1/2 h-[280px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-r from-accent/15 to-accent-3/15 blur-[100px]"
             aria-hidden="true"
           />
           <div className="relative">
-            <p className="inline-flex items-center gap-2 rounded-full border border-accent-3/30 bg-accent-3/10 px-4 py-1.5 font-mono text-xs text-accent-3">
-              <span className="h-1.5 w-1.5 rounded-full bg-accent-3 animate-pulse-slow" aria-hidden="true" />
+            <p className="inline-flex items-center gap-2 rounded-full border border-accent-2/30 bg-accent-2/10 px-4 py-1.5 text-xs font-semibold text-accent-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-accent-2 animate-pulse-slow" aria-hidden="true" />
               {contact.availability}
             </p>
             <h2 className="text-gradient mx-auto mt-6 max-w-xl text-3xl font-bold tracking-tight sm:text-4xl">
@@ -52,12 +52,12 @@ export function Contact() {
               <button
                 type="button"
                 onClick={handleCopyEmail}
-                className="focus-ring inline-flex items-center gap-2 rounded-lg border border-border px-5 py-3 font-mono text-sm text-text transition-colors hover:border-accent-3/60 hover:bg-surface"
+                className="focus-ring inline-flex items-center gap-2 rounded-lg border border-border bg-surface px-5 py-3 text-sm font-medium text-text transition-colors hover:border-accent/50 hover:bg-bg-elevated"
               >
                 {copied ? (
                   <>
                     Copied
-                    <Check className="h-4 w-4 text-accent-3" aria-hidden="true" />
+                    <Check className="h-4 w-4 text-accent-2" aria-hidden="true" />
                   </>
                 ) : (
                   <>
@@ -68,7 +68,7 @@ export function Contact() {
               </button>
             </div>
 
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-mono text-sm text-text-faint">
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-text-faint">
               <a href={`tel:${contact.phone.replace(/\s+/g, '')}`} className="focus-ring inline-flex items-center gap-1.5 hover:text-text">
                 <Phone className="h-3.5 w-3.5" aria-hidden="true" />
                 {contact.phone}

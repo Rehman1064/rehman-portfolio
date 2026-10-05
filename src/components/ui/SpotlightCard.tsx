@@ -47,7 +47,7 @@ export function SpotlightCard({ children, className, tilt = false }: SpotlightCa
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className={cn(
-        'group/spot relative overflow-hidden rounded-xl border border-border bg-surface transition-[border-color,transform] duration-300 hover:border-border-hover',
+        'group/spot relative overflow-hidden rounded-xl border border-border bg-surface shadow-[0_1px_2px_rgba(0,0,0,0.3)] transition-[border-color,box-shadow,transform] duration-300 hover:border-border-hover hover:shadow-[0_12px_32px_-12px_rgba(0,0,0,0.5)]',
         tilt && 'will-change-transform',
         className,
       )}
@@ -57,7 +57,7 @@ export function SpotlightCard({ children, className, tilt = false }: SpotlightCa
         className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover/spot:opacity-100"
         style={{
           background:
-            'radial-gradient(500px circle at var(--spot-x, 50%) var(--spot-y, 50%), var(--color-accent-soft), transparent 65%)',
+            'radial-gradient(500px circle at var(--spot-x, 50%) var(--spot-y, 50%), var(--color-accent-soft), transparent 70%)',
         }}
       />
       <div className="relative h-full">{children}</div>

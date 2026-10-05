@@ -22,8 +22,8 @@ export function Education() {
                     <GraduationCap className="h-4 w-4" aria-hidden="true" />
                   </span>
                   <h3 className="mt-4 text-lg font-bold text-text">{entry.degree}</h3>
-                  <p className="mt-1 text-sm text-accent-2">{entry.school}</p>
-                  <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 font-mono text-xs text-text-faint">
+                  <p className="mt-1 text-sm font-medium text-accent">{entry.school}</p>
+                  <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-text-faint">
                     <span>
                       {entry.start} — {entry.end}
                     </span>
@@ -32,7 +32,7 @@ export function Education() {
                       {entry.location}
                     </span>
                   </div>
-                  <span className="mt-4 inline-flex rounded-md border border-border bg-bg-elevated px-3 py-1.5 font-mono text-sm text-text-muted">
+                  <span className="mt-4 inline-flex rounded-md border border-border bg-bg-elevated px-3 py-1.5 text-sm font-medium text-text-muted">
                     {entry.detail}
                   </span>
                 </div>
